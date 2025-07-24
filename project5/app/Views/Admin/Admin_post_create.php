@@ -10,32 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url() ?>">MyBlog</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/post') ?>">Blog</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="<?= base_url('admin/post/new') ?>" class="btn btn-primary mr-3">New Post</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/setting') ?>">Setting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('auth/logout') ?>">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?= $this->include('admin/navbar'); ?>
 
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container py-5">
@@ -44,34 +19,36 @@
     </div>
 
     <div class="container">
-        <form action="" method="post" id="text-editor">
-            <div class="form-group mb-2">
-                <label for="title">Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Post title" required>
-            </div>
-            <div class="form-group mb-2">
-                <textarea name="content" class="form-control" cols="30" rows="10" placeholder="Write a great post!"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" name="status" value="published" class="btn btn-primary">Publish</button>
-                <button type="submit" name="status" value="draft" class="btn btn-secondary">Save to Draft</button>
-            </div>
-        </form>
-	</div>
-
+ <form action="" method="post" id="text-editor">
+ <div class="form-group mb-2">
+ <label for="title">Title</label>
+ <input type="text" name="title" class="form-control"
+placeholder="Post title" required>
+ </div>
+ <div class="form-group mb-2">
+ <textarea name="content" class="form-control" cols="30"
+rows="10" placeholder="Write a great post!"></textarea>
+ </div>
+ <div class="form-group">
+ <button type="submit" name="status" value="published"
+class="btn btn-primary">Publish</button>
+ <button type="submit" name="status" value="draft" class="btn
+btn-secondary">Save to Draft</button>
+ </div>
+ </form>
+</div>
 
     <div class="container py-4">
         <footer class="pt-3 mt-4 text-muted border-top">
             <div class="container">
-                &copy; <?= Date('Y') ?>
+                &copy; <?= date('Y') ?>
             </div>
         </footer>
     </div>
 
-    <!-- Jquery dan Bootsrap JS -->
+    <!-- Jquery dan Bootstrap JS -->
     <script src="<?= base_url('js/jquery.min.js') ?>"></script>
     <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
-
 </body>
 
 </html>
