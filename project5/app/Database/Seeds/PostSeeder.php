@@ -11,22 +11,19 @@ class PostSeeder extends Seeder
         // membuat data
         $posts_data = [
         [
-        'title' => 'Mulai Nyobain
-        Codeigniter',
-        'slug' => 'codeigniter-starter',
-        'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.'
+        'title'     => 'Mulai Nyobain Codeigniter',
+        'slug'      => 'codeigniter-starter',
+        'content'   => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.'
         ],
         [
-        'title' => 'Cara Mudah Buat Hello
-        World',
-        'slug' => 'hello-world',
-        'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.'
+        'title'     => 'Cara Mudah Buat Hello World',
+        'slug'      => 'hello-world',
+        'content'   => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.'
         ],
         [
-        'title' => 'Meetup Komunitas Kelas
-        Koding',
-        'slug' => 'meetup-comunity',
-        'content' => 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis voluptatum deleniti atque corrupti quos.'
+        'title'     => 'Meetup Komunitas Kelas Koding',
+        'slug'      => 'meetup-comunity',
+        'content'   => 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis voluptatum deleniti atque corrupti quos.'
         ]
         ];
         foreach($posts_data as $data){
