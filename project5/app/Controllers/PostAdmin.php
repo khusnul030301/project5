@@ -51,7 +51,7 @@ class PostAdmin extends BaseController
         }
 		
         // tampilkan form create
-        echo view('admin_create_post');
+        echo view('admin/admin_post_create');
     }
 
     //--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ class PostAdmin extends BaseController
         }
 
         // tampilkan form edit
-        echo view('admin_edit_post', $data);
+        echo view('admin/admin_post_update', $data);
     }
 
     //--------------------------------------------------------------------------
