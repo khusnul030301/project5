@@ -37,9 +37,9 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'login' => LoginFilter::class, // add this code
-        'role' => RoleFilter::class, // add this code
-        'permission' => PermissionFilter::class // add this code
+        'login'         => LoginFilter::class, // add this code
+        'role'          => RoleFilter::class, // add this code
+        'permission'    => PermissionFilter::class // add this code
     ];
 
     /**
@@ -109,5 +109,7 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'login' => ['before' => ['admin/post/*']], // add this code
+    ];
 }
