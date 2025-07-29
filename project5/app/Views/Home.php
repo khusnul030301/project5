@@ -62,7 +62,7 @@
 	<div class="row">
 		<?php 
 		$menu = [
-			['nama' => 'Nasi Goreng Spesial', 'gambar' => 'https://source.unsplash.com/300x200/?nasi-goreng', 'harga' => 'Rp25.000'],
+			['nama' => 'Nasi Goreng Spesial', 'gambar' => 'https://www.google.com/imgres?q=nasi%20goreng%20spesial&imgurl=https%3A%2F%2Fasset.kompas.com%2Fcrops%2F3xYktcut3GtTLSvS9iNgqM4e380%3D%2F0x0%3A1000x667%2F1200x800%2Fdata%2Fphoto%2F2023%2F05%2F06%2F645677f368fc1.jpg&imgrefurl=https%3A%2F%2Fwww.kompas.com%2Ffood%2Fread%2F2023%2F05%2F08%2F080200675%2Fresep-nasi-goreng-spesial-hidangan-nasi-terenak-di-dunia-versi-cnn&docid=2AC1sDXm0smLnM&tbnid=pA8ft_gHnl_c4M&vet=12ahUKEwiklIPNw-GOAxWWV2wGHQ9HABkQM3oECBsQAA..i&w=1200&h=800&hcb=2&ved=2ahUKEwiklIPNw-GOAxWWV2wGHQ9HABkQM3oECBsQAA', 'harga' => 'Rp25.000'],
 			['nama' => 'Mie Ayam Bakso', 'gambar' => 'https://source.unsplash.com/300x200/?mie-ayam', 'harga' => 'Rp20.000'],
 			['nama' => 'Es Teh Manis', 'gambar' => 'https://source.unsplash.com/300x200/?ice-tea', 'harga' => 'Rp5.000']
 		];
