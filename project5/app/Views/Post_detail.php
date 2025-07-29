@@ -5,7 +5,30 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= esc($post['title']) ?> - RestoKita</title>
-	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>">
+	<style>
+		body {
+			font-family: 'Segoe UI', sans-serif;
+		}
+
+		.card-img-top {
+			height: 400px;
+			object-fit: cover;
+			border-radius: 0.5rem 0.5rem 0 0;
+		}
+
+		.card-title {
+			color: #e74c3c;
+			font-weight: bold;
+			font-size: 2rem;
+		}
+
+		.btn-outline-secondary:hover {
+			background-color: #e67e22;
+			border-color: #e67e22;
+			color: #fff;
+		}
+	</style>
 </head>
 
 <body>
@@ -34,13 +57,13 @@
 			<div class="col-md-8 offset-md-2">
 				<div class="card mb-4">
 					<?php if (!empty($post['image'])) : ?>
-						<img src="<?= base_url('images/NasiGorengSpesial.jpg' . $post['image']) ?>" class="card-img-top" alt="Gambar Menu">
+						<img src="<?= base_url('images/' . $post['image']) ?>" class="card-img-top" alt="<?= esc($post['title']) ?>">
 					<?php endif; ?>
 					<div class="card-body">
 						<h3 class="card-title"><?= esc($post['title']) ?></h3>
-						<small class="text-muted">Diposting pada <?= date('d M Y', strtotime($post['created_at'])) ?> oleh RestoKita</small>
-						<p class="mt-3"><?= esc($post['content']) ?></p>
-						<a href="<?= base_url('post') ?>" class="btn btn-outline-secondary mt-3">← Kembali ke daftar menu</a>
+						<small class="text-muted">Diposting pada <?= date('d M Y', strtotime($post['created_at'] ?? date('Y-m-d'))) ?> oleh RestoKita</small>
+						<div class="mt-3"><?= $post['content'] ?></div>
+						<a href="<?= base_url('post') ?>" class="btn btn-outline-secondary mt-4">← Kembali ke daftar menu</a>
 					</div>
 				</div>
 			</div>
@@ -54,7 +77,7 @@
 		</footer>
 	</div>
 
-	<script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
+	<script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
 </body>
 
 </html>

@@ -13,8 +13,8 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: #000000ff;
-				text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+				color: #e67e22;
+				text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
 		}
 		.card:hover {
 			transform: scale(1.02);
@@ -50,7 +50,7 @@
 
 <!-- Hero -->
 <section class="hero position-relative">
-	<div class="overlay position-absolute w-100 h-100" style="background: rgba(255, 153, 20, 0.4); top: 0; left: 0;"></div>
+	<div class="overlay position-absolute w-100 h-100" style="background: #e67e22(8, 6, 6, 0.4); top: 0; left: 0;"></div>
 	<div class="text-center position-relative">
 		<h1 class="display-4 fw-bold">Selamat Datang di RestoKita</h1>
 		<p class="lead">Nikmati cita rasa terbaik dari dapur kami</p>

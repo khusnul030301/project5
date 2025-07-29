@@ -2,43 +2,45 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\PostModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Post extends BaseController
 {
+    protected $postModel;
+
+    public function __construct()
+    {
+        // Inisialisasi model sekali saja
+        $this->postModel = new PostModel();
+    }
+
     public function index()
-	{
-    // buat object model $post
-    $post = new PostModel();
+    {
+        // Ambil semua postingan yang status-nya "published"
+        $data['posts'] = $this->postModel
+            ->where('status', 'published')
+            ->orderBy('created_at', 'DESC') // urutkan berdasarkan tanggal terbaru
+            ->findAll();
 
-    /*
-     siapkan data untuk dikirim ke view dengan nama $posts
-     dan isi datanya dengan post yang sudah terbit
-    */
-    $data['posts'] = $post->where('status', 'published')->findAll();
+        // Tampilkan view post.php
+        return view('Post', $data);
+    }
 
-    // kirim data ke view
-    echo view('post', $data);
-	}
+    public function viewPost($slug)
+    {
+        // Ambil satu postingan berdasarkan slug dan status
+        $post = $this->postModel->where([
+            'slug' => $slug,
+            'status' => 'published'
+        ])->first();
 
-	//------------------------------------------------------------
+        // Jika tidak ditemukan, tampilkan halaman 404
+        if (!$post) {
+            throw PageNotFoundException::forPageNotFound("Menu tidak ditemukan: $slug");
+        }
 
-	public function viewPost($slug)
-	{
-		$post = new PostModel();
-		$data['post'] = $post->where([
-			'slug' => $slug,
-			'status' => 'published'
-		])->first();
-
-        // tampilkan 404 error jika data tidak ditemukan
-		if (!$data['post']) {
-			throw PageNotFoundException::forPageNotFound();
-		}
-
-		echo view('post_detail', $data);
-	}
+        // Kirim data ke view
+        return view('Post_detail', ['post' => $post]);
+    }
 }

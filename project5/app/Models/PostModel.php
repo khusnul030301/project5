@@ -6,11 +6,15 @@ use CodeIgniter\Model;
 
 class PostModel extends Model
 {
-    protected $table            = 'posts';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $allowedFields    = ['title', 'content', 'status', 'author', 'slug', 'image'];
+    protected $table = 'posts';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['title', 'slug', 'content', 'image', 'status', 'created_at'];
 
+    public function getPublishedPosts()
+    {
+        return $this->where('status', 'published')->orderBy('created_at', 'DESC')->findAll();
+    }
+    
     // protected $useAutoIncrement = true;
     // protected $returnType       = 'array';
     // protected $useSoftDeletes   = false;

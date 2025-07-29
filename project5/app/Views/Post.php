@@ -92,36 +92,63 @@
 	</div>
 
 	<!-- Daftar Menu -->
-	<div class="container my-5">
-		<div class="row g-4">
-			<?php foreach ($posts as $post) : ?>
-				<div class="col-md-6 col-lg-4">
-					<div class="card h-100">
-						<?php if (!empty($post['image'])) : ?>
-							<img src="<?= base_url('images/' . $post['image']) ?>" class="card-img-top" alt="<?= esc($post['title']) ?>">
-						<?php else: ?>
-							<img src="<?= base_url('images/default.jpg') ?>" class="card-img-top" alt="Menu">
-						<?php endif; ?>
-						<div class="card-body">
-							<h5 class="card-title"><?= esc($post['title']) ?></h5>
-							<p class="card-text">
-								<?= esc(strlen(strip_tags($post['content'])) > 100 ? substr(strip_tags($post['content']), 0, 100) . '...' : strip_tags($post['content'])) ?>
-							</p>
-							<a href="<?= base_url('post/' . $post['slug']) ?>" class="btn btn-primary btn-sm">Lihat Detail</a>
+		<div class="container my-5">
+			<div class="row g-4">
+				<?php foreach ($posts as $post) : ?>
+					<div class="col-md-6 col-lg-4">
+						<div class="card h-100">
+							<?php if (!empty($post['image'])) : ?>
+								<img src="<?= base_url('images/' . $post['image']) ?>" class="card-img-top" alt="<?= esc($post['title']) ?>">
+							<?php else: ?>
+								<img src="<?= base_url('images/default.jpg') ?>" class="card-img-top" alt="Menu">
+							<?php endif; ?>
+							<div class="card-body">
+								<h5 class="card-title"><?= esc($post['title']) ?></h5>
+								<p class="card-text">
+									<?= esc(strlen(strip_tags($post['content'])) > 100 ? substr(strip_tags($post['content']), 0, 100) . '...' : strip_tags($post['content'])) ?>
+								</p>
+								<a href="<?= base_url('post/' . $post['slug']) ?>" class="btn btn-primary btn-sm">Lihat Detail</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			<?php endforeach ?>
+				<?php endforeach ?>
+			</div>
 		</div>
-	</div>
 
-	<!-- Footer -->
-	<div class="container py-4">
-		<footer class="pt-3 mt-4 text-muted border-top text-center">
-			&copy; <?= date('Y') ?> RestoKita. Semua Hak Dilindungi.
-		</footer>
-	</div>
+		<!-- Footer -->
+		<div class="container py-4">
+			<footer class="pt-3 mt-4 text-muted border-top text-center">
+				&copy; <?= date('Y') ?> RestoKita. Semua Hak Dilindungi.
+			</footer>
+		</div>
 
+		<div class="container my-5">
+		<?php if (!empty($posts)) : ?>
+			<div class="row g-4">
+				<?php foreach ($posts as $post) : ?>
+					<div class="col-md-6 col-lg-4">
+						<div class="card h-100">
+							<img src="<?= base_url('images/' . ($post['image'] ?? 'default.jpg')) ?>"
+								class="card-img-top"
+								alt="<?= esc($post['title']) ?>">
+							<div class="card-body">
+								<h5 class="card-title"><?= esc($post['title']) ?></h5>
+								<p class="card-text">
+									<?= esc(character_limiter(strip_tags($post['content']), 100)) ?>
+								</p>
+								<a href="<?= base_url('post/' . $post['slug']) ?>"
+								class="btn btn-primary btn-sm">Lihat Detail</a>
+							</div>
+						</div>
+					</div>
+				<?php endforeach ?>
+			</div>
+		<?php else : ?>
+			<div class="alert alert-info text-center">
+				Belum ada menu yang tersedia saat ini.
+			</div>
+		<?php endif ?>
+	</div>
 	<script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
 </body>
 
