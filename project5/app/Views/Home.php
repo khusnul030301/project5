@@ -38,8 +38,9 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active" href="<?= base_url() ?>">Home</a></li>
+				<li class="nav-item"><a class="nav-link active" href="<?= base_url() ?>">Beranda</a></li>
 				<li class="nav-item"><a class="nav-link" href="<?= base_url('about') ?>">Tentang Kami</a></li>
+				<li class="nav-item"><a class="nav-link" href="<?= base_url('post') ?>">Menu</a></li>
 				<li class="nav-item"><a class="nav-link" href="<?= base_url('contact') ?>">Kontak</a></li>
 				<li class="nav-item"><a class="nav-link" href="<?= base_url('faqs') ?>">FAQ</a></li>
 			</ul>

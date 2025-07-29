@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MyBlog</title>
+	<title>Kontak | RestoKita</title>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
@@ -13,25 +12,26 @@
 
 <body>
 
+	<!-- Navbar -->
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="<?= base_url() ?>">MyBlog</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<a class="navbar-brand" href="<?= base_url() ?>">RestoKita</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url() ?>">Home</a>
+						<a class="nav-link" href="<?= base_url() ?>">Beranda</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('about') ?>">About</a>
+						<a class="nav-link" href="<?= base_url('about') ?>">Tentang</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('post') ?>">Blog</a>
+						<a class="nav-link" href="<?= base_url('post') ?>">Menu</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="<?= base_url('contact') ?>">Contact</a>
+						<a class="nav-link active" aria-current="page" href="<?= base_url('contact') ?>">Kontak</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?= base_url('faqs') ?>">FAQ</a>
@@ -41,45 +41,47 @@
 		</div>
 	</nav>
 
-	<div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container py-5">
-        <h1 class="display-5 fw-bold">Contact</h1>
-        
-      </div>
-    </div>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">Alamat</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
-				</div>
-			</div>
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">Email</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
-				</div>
-			</div>
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">No.HP</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
-				</div>
-			</div>
-			
+	<!-- Header -->
+	<div class="p-5 mb-4 bg-light rounded-3 mt-5">
+		<div class="container py-5">
+			<h1 class="display-5 fw-bold">Hubungi Kami</h1>
+			<p class="fs-5">Silakan hubungi kami untuk reservasi, pemesanan, atau pertanyaan lainnya.</p>
 		</div>
 	</div>
-	<div class="container py-4">
-		<footer class="pt-3 mt-4 text-muted border-top">
-			<div class="container">
-				&copy; <?= Date('Y') ?>
+
+	<!-- Konten -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 my-3">
+				<div class="card h-100">
+					<img src="<?= base_url('images/resto_front.jpg') ?>" class="card-img-top" alt="RestoKita Depan">
+					<div class="card-body">
+						<h5 class="card-title">Alamat Kami</h5>
+						<p class="card-text">Jl. Kuliner No.88, Jakarta Selatan, Indonesia</p>
+					</div>
+				</div>
 			</div>
+			<div class="col-md-6 my-3">
+				<div class="card h-100">
+					<img src="<?= base_url('images/chef_call.jpg') ?>" class="card-img-top" alt="Kontak Chef">
+					<div class="card-body">
+						<h5 class="card-title">Hubungi Kami</h5>
+						<p>Email: info@restokita.com<br>No. Telp: 0812-3456-7890</p>
+						<p>Jam Operasional: 10.00 - 22.00 WIB</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div class="container py-4">
+		<footer class="pt-3 mt-4 text-muted border-top text-center">
+			&copy; <?= Date('Y') ?> RestoKita
 		</footer>
 	</div>
 
-	<!-- Jquery dan Bootsrap JS -->
+	<!-- JS -->
 	<script src="<?= base_url('js/jquery.min.js') ?>"></script>
 	<script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 
