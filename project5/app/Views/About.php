@@ -40,7 +40,7 @@
 	<div class="container mb-5">
 		<div class="row align-items-center">
 			<div class="col-md-6">
-				<img src="https://source.unsplash.com/600x400/?restaurant,interior" class="img-fluid rounded shadow-sm" alt="Interior Restoran">
+				<img src="<?= base_url('images/interior.jpg') ?>" class="img-fluid rounded shadow-sm" alt="Interior Restoran">
 			</div>
 			<div class="col-md-6">
 				<h4>Siapa Kami</h4>
@@ -52,7 +52,7 @@
 
 		<div class="row mt-5 align-items-center">
 			<div class="col-md-6 order-md-2">
-				<img src="https://source.unsplash.com/600x400/?chef,kitchen" class="img-fluid rounded shadow-sm" alt="Dapur dan Chef">
+				<img src="<?= base_url('images/dapurdanchef.jpg') ?>" class="img-fluid rounded shadow-sm" alt="Interior Restoran">
 			</div>
 			<div class="col-md-6 order-md-1">
 				<h4>Apa yang Kami Tawarkan</h4>
