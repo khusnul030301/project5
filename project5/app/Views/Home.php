@@ -7,22 +7,22 @@
 	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>">
 	<style>
 		.hero {
-			background: url('https://source.unsplash.com/1600x600/?restaurant,food') no-repeat center center;
-			background-size: cover;
-			height: 500px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+				background: url('https://source.unsplash.com/1600x600/?restaurant,food') no-repeat center center;
+				background-size: cover;
+				height: 500px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #000000ff;
+				text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
 		}
 		.card:hover {
 			transform: scale(1.02);
-			box-shadow: 0 0 15px rgba(0,0,0,0.15);
+			box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
 			transition: 0.3s ease;
 		}
 		footer {
-			background-color: #f8f9fa;
+			background-color: #0c0c0cff;
 			padding: 20px 0;
 		}
 	</style>
@@ -49,8 +49,9 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero">
-	<div class="text-center">
+<section class="hero position-relative">
+	<div class="overlay position-absolute w-100 h-100" style="background: rgba(255, 153, 20, 0.4); top: 0; left: 0;"></div>
+	<div class="text-center position-relative">
 		<h1 class="display-4 fw-bold">Selamat Datang di RestoKita</h1>
 		<p class="lead">Nikmati cita rasa terbaik dari dapur kami</p>
 	</div>
@@ -62,10 +63,23 @@
 	<div class="row">
 		<?php 
 		$menu = [
-			['nama' => 'Nasi Goreng Spesial', 'gambar' => 'https://www.google.com/imgres?q=nasi%20goreng%20spesial&imgurl=https%3A%2F%2Fasset.kompas.com%2Fcrops%2F3xYktcut3GtTLSvS9iNgqM4e380%3D%2F0x0%3A1000x667%2F1200x800%2Fdata%2Fphoto%2F2023%2F05%2F06%2F645677f368fc1.jpg&imgrefurl=https%3A%2F%2Fwww.kompas.com%2Ffood%2Fread%2F2023%2F05%2F08%2F080200675%2Fresep-nasi-goreng-spesial-hidangan-nasi-terenak-di-dunia-versi-cnn&docid=2AC1sDXm0smLnM&tbnid=pA8ft_gHnl_c4M&vet=12ahUKEwiklIPNw-GOAxWWV2wGHQ9HABkQM3oECBsQAA..i&w=1200&h=800&hcb=2&ved=2ahUKEwiklIPNw-GOAxWWV2wGHQ9HABkQM3oECBsQAA', 'harga' => 'Rp25.000'],
-			['nama' => 'Mie Ayam Bakso', 'gambar' => 'https://source.unsplash.com/300x200/?mie-ayam', 'harga' => 'Rp20.000'],
-			['nama' => 'Es Teh Manis', 'gambar' => 'https://source.unsplash.com/300x200/?ice-tea', 'harga' => 'Rp5.000']
+			[
+				'nama' => 'Nasi Goreng Spesial',
+				'gambar' => base_url(relativePath: 'images/NasiGorengSpesial.jpg'),
+				'harga' => 'Rp25.000'
+			],
+			[
+				'nama' => 'Mie Ayam Bakso',
+				'gambar' => base_url(relativePath: 'images/MieAyambakso.jpg'),
+				'harga' => 'Rp20.000'
+			],
+			[
+				'nama' => 'Es Teh Manis',
+				'gambar' => base_url(relativePath: 'images/estehmanis.jpg'),
+				'harga' => 'Rp5.000'
+			]
 		];
+
 		foreach ($menu as $item): ?>
 		<div class="col-md-4 mb-4">
 			<div class="card h-100">
@@ -80,6 +94,7 @@
 		<?php endforeach ?>
 	</div>
 </div>
+
 
 <!-- Footer -->
 <footer class="text-center text-muted border-top">
