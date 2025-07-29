@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MyBlog</title>
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+	<title>RestoKita</title>
+	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>">
+	<style>
+		.hero {
+			background: url('https://source.unsplash.com/1600x600/?restaurant,food') no-repeat center center;
+			background-size: cover;
+			height: 500px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+		}
+		.card:hover {
+			transform: scale(1.02);
+			box-shadow: 0 0 15px rgba(0,0,0,0.15);
+			transition: 0.3s ease;
+		}
+		footer {
+			background-color: #f8f9fa;
+			padding: 20px 0;
+		}
+	</style>
 </head>
-
 <body>
 
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<div class="container">
-			<a class="navbar-brand" href="<?= base_url() ?>">MyBlog</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="<?= base_url() ?>">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('about') ?>">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('post') ?>">Blog</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('contact') ?>">Contact</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('faqs') ?>">FAQ</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container py-5">
-        <h1 class="display-5 fw-bold">Selamat Datang</h1>
-        <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->
-        <!-- <button class="btn btn-primary btn-sm" type="button">Read more</button> -->
-      </div>
-    </div>
-
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">Mulai ngoding PHP nich</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
-				</div>
-			</div>
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">Jadi paham CSS dan JS</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
-				</div>
-			</div>
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">Codeigniter asyik juga kok</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
-				</div>
-			</div>
-			
+		<a class="navbar-brand" href="<?= base_url() ?>">RestoKita</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link active" href="<?= base_url() ?>">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="<?= base_url('about') ?>">Tentang Kami</a></li>
+				<li class="nav-item"><a class="nav-link" href="<?= base_url('contact') ?>">Kontak</a></li>
+				<li class="nav-item"><a class="nav-link" href="<?= base_url('faqs') ?>">FAQ</a></li>
+			</ul>
 		</div>
 	</div>
-	<div class="container py-4">
-		<footer class="pt-3 mt-4 text-muted border-top">
-			<div class="container">
-				&copy; <?= Date('Y') ?>
-			</div>
-		</footer>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+	<div class="text-center">
+		<h1 class="display-4 fw-bold">Selamat Datang di RestoKita</h1>
+		<p class="lead">Nikmati cita rasa terbaik dari dapur kami</p>
 	</div>
+</section>
 
-	<!-- Jquery dan Bootsrap JS -->
-	<script src="<?= base_url('js/jquery.min.js') ?>"></script>
-	<script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
+<!-- Menu Section -->
+<div class="container my-5">
+	<h2 class="text-center mb-4">Menu Unggulan</h2>
+	<div class="row">
+		<?php 
+		$menu = [
+			['nama' => 'Nasi Goreng Spesial', 'gambar' => 'https://source.unsplash.com/300x200/?nasi-goreng', 'harga' => 'Rp25.000'],
+			['nama' => 'Mie Ayam Bakso', 'gambar' => 'https://source.unsplash.com/300x200/?mie-ayam', 'harga' => 'Rp20.000'],
+			['nama' => 'Es Teh Manis', 'gambar' => 'https://source.unsplash.com/300x200/?ice-tea', 'harga' => 'Rp5.000']
+		];
+		foreach ($menu as $item): ?>
+		<div class="col-md-4 mb-4">
+			<div class="card h-100">
+				<img src="<?= $item['gambar'] ?>" class="card-img-top" alt="<?= $item['nama'] ?>">
+				<div class="card-body">
+					<h5 class="card-title"><?= $item['nama'] ?></h5>
+					<p class="card-text"><?= $item['harga'] ?></p>
+					<a href="#" class="btn btn-outline-success btn-sm">Pesan Sekarang</a>
+				</div>
+			</div>
+		</div>
+		<?php endforeach ?>
+	</div>
+</div>
 
+<!-- Footer -->
+<footer class="text-center text-muted border-top">
+	<div class="container">
+		<p class="mb-0">&copy; <?= date('Y') ?> RestoKita. Dibuat dengan ❤️ di CodeIgniter 4</p>
+	</div>
+</footer>
+
+<!-- JS Bootstrap -->
+<script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
 </body>
-
 </html>
