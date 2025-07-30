@@ -13,8 +13,8 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: #e67e22;
-				text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
+				color: #e74c3c;
+				text-shadow: 2px 2px 8px #c6c7c9ff(255, 255, 255, 1);
 		}
 		.card:hover {
 			transform: scale(1.02);

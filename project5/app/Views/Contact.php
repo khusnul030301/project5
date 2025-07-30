@@ -8,6 +8,9 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+
+	<!-- Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -54,20 +57,19 @@
 		<div class="row">
 			<div class="col-md-6 my-3">
 				<div class="card h-100">
-					<img src="<?= base_url('images/resto_front.jpg') ?>" class="card-img-top" alt="RestoKita Depan">
 					<div class="card-body">
-						<h5 class="card-title">Alamat Kami</h5>
+						<h5 class="card-title"><i class="bi bi-geo-alt-fill me-2"></i>Alamat Kami</h5>
 						<p class="card-text">Jl. Kuliner No.88, Jakarta Selatan, Indonesia</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6 my-3">
 				<div class="card h-100">
-					<img src="<?= base_url('images/chef_call.jpg') ?>" class="card-img-top" alt="Kontak Chef">
 					<div class="card-body">
-						<h5 class="card-title">Hubungi Kami</h5>
-						<p>Email: info@restokita.com<br>No. Telp: 0812-3456-7890</p>
-						<p>Jam Operasional: 10.00 - 22.00 WIB</p>
+						<h5 class="card-title"><i class="bi bi-telephone-fill me-2"></i>Hubungi Kami</h5>
+						<p><i class="bi bi-envelope-fill me-2"></i>Email: info@restokita.com<br>
+						   <i class="bi bi-telephone-fill me-2"></i>No. Telp: 0812-3456-7890</p>
+						<p><i class="bi bi-clock-fill me-2"></i>Jam Operasional: 10.00 - 22.00 WIB</p>
 					</div>
 				</div>
 			</div>
@@ -77,7 +79,7 @@
 	<!-- Footer -->
 	<div class="container py-4">
 		<footer class="pt-3 mt-4 text-muted border-top text-center">
-			&copy; <?= Date('Y') ?> RestoKita
+			&copy; <?= date('Y') ?> RestoKita
 		</footer>
 	</div>
 
